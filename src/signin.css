@@ -1,0 +1,97 @@
+/* Container for the entire form */
+.container {
+  width: 400px;
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header text like "Login" or "Signup" */
+.header .text {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input field container */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Single input field with icon */
+.input-data {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* Input icons */
+.input-data img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Actual input field */
+.input-data input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+/* Forgot password text */
+.forgot-password {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 14px;
+  color: #888;
+}
+
+.forgot-password span {
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Submit button styles */
+.submit {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+}
+
+/* For Login/Signup toggle buttons */
+.submit-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.submit.gray {
+  background-color: #ccc;
+  color: #666;
+  cursor: default;
+}
