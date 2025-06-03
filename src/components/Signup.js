@@ -4,10 +4,9 @@ import '../signin.css';
 
 const Signin = () => {
   const [userData, setUserData] = useState({
-    userName: '',
-    userEmail: '',
-    userPassword: '',
-    id:null
+    name: '',
+    email: '',
+    password: '',
   });
 
   const [users, setUsers] = useState([]);
@@ -24,17 +23,17 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (editUserId) {
-      // Update existing user
-      try {
-        await axios.put(`http://localhost:21020/api/signin/${userData.id}`, userData);
-        setEditUserId(null);
-        setUserData({ userName: '', userEmail: '', userPassword: '' });
-        allUsers();
-      } catch (error) {
-        console.error("Update error:", error);
-      }
-    } else {
+    // if (editUserId !=null) {
+    //   // Update existing user
+    //   try {
+    //     await axios.put(`http://localhost:21020/api/signin/${userData.id}`, userData);
+    //     setEditUserId(null);
+    //     setUserData({ userName: '', userEmail: '', userPassword: '' });
+    //     allUsers();
+    //   } catch (error) {
+    //     console.error("Update error:", error);
+    //   }
+    // } else {
       // Create new user
       try {
         await axios.post("http://localhost:21020/api/signin", userData);
@@ -43,7 +42,7 @@ const Signin = () => {
       } catch (error) {
         console.error("Signup error:", error);
       }
-    }
+    // }
   };
 
   const allUsers = () => {
@@ -86,7 +85,7 @@ const Signin = () => {
         <div className="inputs">
           <div className="input-data">
             <input
-              name="userName"
+              name="name"
               type="text"
               placeholder="Name"
               value={userData.userName}
@@ -97,7 +96,7 @@ const Signin = () => {
 
           <div className="input-data">
             <input
-              name="userEmail"
+              name="email"
               type="email"
               placeholder="Email"
               value={userData.userEmail}
@@ -108,7 +107,7 @@ const Signin = () => {
 
           <div className="input-data">
             <input
-              name="userPassword"
+              name="password"
               type="password"
               placeholder="Password"
               value={userData.userPassword}
@@ -118,8 +117,8 @@ const Signin = () => {
           </div>
         </div>
 
-        <button type="submit" onClick={handleSubmit} className="submit">
-          {editUserId ? "Update User" : "Sign in"}
+        <button type="submit"  className="submit">
+          Sign In
         </button>
       </form>
 
